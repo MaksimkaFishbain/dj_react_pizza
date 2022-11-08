@@ -1,0 +1,316 @@
+@import url("https://fonts.googleapis.com/css2?family=Send+Flowers&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Forum&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+li {
+  list-style-type: none;
+}
+
+.pizzaBackground .leftSide {
+  z-index: -1;
+  position: absolute;
+  left: -120px;
+  display: flex;
+  flex-flow: column wrap;
+  float: left;
+}
+.pizzaBackground .leftSide img {
+  margin-bottom: 20px;
+}
+.pizzaBackground .rightSide {
+  z-index: -1;
+  position: absolute;
+  right: -120px;
+  display: flex;
+  flex-flow: column wrap;
+  float: right;
+}
+.pizzaBackground .rightSide img {
+  margin-bottom: 20px;
+}
+
+body {
+  position: relative;
+  background-color: #AF2A1E;
+  overflow-x: hidden;
+}
+
+.wrapper {
+  margin: 0 170px;
+  padding-top: 1px;
+  min-width: 500px;
+  background-color: #FEF6D1;
+  border-radius: 30px;
+  height: 100%;
+  overflow: hidden;
+}
+.wrapper .header {
+  position: relative;
+  margin: 0 auto;
+  margin-top: 31px;
+  display: flex;
+}
+@media screen and (max-width: 997px) {
+  .wrapper .header {
+    display: block;
+    flex-flow: column wrap;
+  }
+}
+.wrapper .header .logo {
+  font-family: "Send Flowers", cursive;
+  text-shadow: 1px 1px #cfc0c0;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: -30px;
+  left: 100px;
+  width: 300px;
+  height: 100px;
+}
+.wrapper .header .logo img {
+  margin-right: 15px;
+  width: 50px;
+  height: 50px;
+}
+.wrapper .header .search {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  right: 40%;
+  background-color: #FFFFFF;
+  padding-left: 30px;
+  width: 564px;
+  height: 70px;
+  border-radius: 40px;
+  box-shadow: 1px 1px 1px 1px #ccc inset;
+}
+.wrapper .header .search input[type=text] {
+  color: #908C8C;
+  margin-left: 8px;
+  border: none;
+  outline: none;
+}
+.wrapper .header .search img {
+  width: 20px;
+  height: 20px;
+}
+.wrapper .header .currentPayment {
+  background-color: #FFFFFF;
+  display: flex;
+  position: absolute;
+  right: 50px;
+  height: 55px;
+  border-radius: 40px;
+  width: 200px;
+  box-shadow: 5px 5px #cfc0c0;
+}
+.wrapper .header .currentPayment #fst {
+  border-radius: 40px 0 0 40px;
+  width: 50%;
+  border-left: white;
+  border-top: white;
+  border-bottom: white;
+  background-color: #FFFFFF;
+}
+.wrapper .header .currentPayment #sec {
+  border-radius: 0 40px 30px 0;
+  width: 50%;
+  background-color: #FFFFFF;
+  border: none;
+}
+.wrapper .sortings {
+  display: flex;
+  border-top: 2px solid black;
+  margin-top: 140px;
+  border-bottom: 2px solid black;
+  background-color: #F9E9A2;
+  height: 200px;
+  margin-bottom: 50px;
+  border-radius: 0 20px;
+  font-size: 20px;
+}
+.wrapper .sortings #left {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 510px;
+  border-right: 1px dashed rgba(0, 0, 0, 0.5);
+  padding-right: 40px;
+  padding-top: 20px;
+  border-spacing: 20px;
+}
+.wrapper .sortings #left li:first-child {
+  text-align: center;
+  width: 160px;
+  height: 25px;
+  color: white;
+  border-radius: 5px;
+  background: rgb(255, 0, 0);
+  cursor: pointer;
+}
+.wrapper .sortings #left li:nth-child(2) {
+  text-align: center;
+  color: white;
+  background: rgb(37, 186, 11);
+  width: 160px;
+  height: 25px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.wrapper .sortings #left li:last-child {
+  text-align: center;
+  color: white;
+  background: linear-gradient(225deg, rgb(38, 255, 0) 3%, rgb(255, 0, 0) 94%);
+  width: 160px;
+  height: 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+}
+.wrapper .sortings #center {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  height: 155px;
+  width: 510px;
+  border-right: 1px dashed rgba(0, 0, 0, 0.5);
+}
+.wrapper .sortings #center input {
+  height: 44px;
+  width: 102px;
+  margin: 5px;
+  border-radius: 20px;
+  background-color: #FEF6D1;
+  box-shadow: 1px 1px 1px 1px #000 inset;
+}
+.wrapper .sortings #right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 510px;
+  padding: 0px 0px 30px 10px;
+}
+.wrapper .sortings #right select {
+  cursor: pointer;
+}
+
+.menu {
+  width: 1547px;
+  margin-left: 20px;
+}
+.menu .card {
+  display: inline-block;
+  margin-right: 100px;
+  margin-bottom: 50px;
+  position: relative;
+  border: 1px solid black;
+  width: 277px;
+  height: 315px;
+  border-radius: 12%;
+  box-shadow: inset 0px 0px 5px 10px rgba(0, 0, 0, 0.1);
+  font-family: "Forum", cursive;
+}
+.menu .card img:nth-child(2) {
+  position: absolute;
+  margin-top: 15px;
+  left: 9%;
+  width: 230px;
+  height: 230px;
+}
+.menu .card img:nth-child(2):hover {
+  margin-top: 5px;
+}
+.menu .card .info {
+  margin-left: 15px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.menu .card .aboutPizza {
+  position: absolute;
+  display: flow;
+  text-align: center;
+  background-color: #FEF6D1;
+  border: 1px solid black;
+  border-radius: 12%;
+  margin-top: 110px;
+  width: 100%;
+  height: 204px;
+}
+.menu .card .aboutPizza .buttons {
+  background-color: #FFC377;
+  box-shadow: inset 0px 3px 1px 1px rgba(0, 0, 0, 0.1);
+}
+.menu .card .aboutPizza button {
+  background-color: transparent;
+  font-size: 2.5vh;
+  border: none;
+  width: 50%;
+  cursor: pointer;
+}
+.menu .card .aboutPizza .first {
+  border-top: 1px solid black;
+  margin-bottom: 10px;
+}
+.menu .card .aboutPizza .first button {
+  width: 33.3%;
+}
+.menu .card .aboutPizza .second {
+  display: flex;
+  border-bottom: 1px solid black;
+  align-items: center;
+}
+.menu .card .aboutPizza .second button {
+  margin: 0;
+  font-size: 2.05vh;
+}
+.menu .card .aboutPizza h2 {
+  padding-top: 25px;
+  margin: auto;
+  width: 50%;
+  height: 50px;
+}
+
+.modal {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal .modal.active {
+  display: none;
+}
+.modal .modal__content {
+  padding: 20px;
+  border-radius: 12px;
+  background-color: aliceblue;
+  height: 500px;
+  width: 700px;
+  z-index: 100;
+}
+
+.cart-block {
+  position: fixed;
+  right: -8px;
+  top: -5px;
+  height: 101%;
+  width: 400px;
+  background-color: #FFFFFF;
+  z-index: 105;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+/*# sourceMappingURL=styles.css.map */
