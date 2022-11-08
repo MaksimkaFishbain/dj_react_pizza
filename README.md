@@ -1,13 +1,11 @@
-# django_react_integration
+# django_react
 Integration of Django (Python back-end) and React JS (JavaScript front-end)
-
-> git clone https://github.com/kenLovesToCode/django_react_integration.git
 
 > cd frontend
 
-> yarn or npm install
+> npm install
 
-> yarn run build or npm run build
+> npm run build
 
 > cd ..
 
