@@ -5,11 +5,11 @@ const Header = () => {
         <div>
             <form className="header">
                 <div className="logo">
-                    <img src="file:///C:/Users/bbadb/OneDrive/Desktop/django_react_integration-main/frontend/public/images/pizza.png" alt="logo"/>
+                    <img src="/images/pizza.png" alt="logo"/>
                     <h1>Pizza iz zada</h1>
                 </div>
                 <div className="search">
-                    <img src="file:///C:/Users/bbadb/OneDrive/Desktop/django_react_integration-main/frontend/public/images/search.png"  alt="search"/>
+                    <img src="/images/search.png"  alt="search"/>
                     <input type={"text"} placeholder="Поиск..." />
                 </div>
                 <div className="currentPayment">

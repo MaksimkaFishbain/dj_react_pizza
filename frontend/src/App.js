@@ -15,21 +15,24 @@ function App() {
       image: "/images/pizzaPeperoni.png",
       price: 120,
       modalContent: "20 грамм картошки",
-      isMeat: 1
+      isMeat: 1,
+      popularity: 36,
     },
     {
       title: "Салями",
       image: "/images/pizzaSalami.png",
       price: 99,
       modalContent: "40 грамм мандавошки",
-      isMeat: 1
+      isMeat: 1,
+      popularity: 24,
     },
     {
       title: "Гавайская",
       image: "/images/pizzaGavaiskia.png",
       price: 81,
       modalContent: "15 мандаринок",
-      isMeat: 1
+      isMeat: 1,
+      popularity: 18,
     },
     {
       title: "Грибная",
@@ -37,6 +40,7 @@ function App() {
       price: 144,
       modalContent: "90 ведер воды",
       isMeat: 0,
+      popularity: 22,
     },
     {
       title: "4 сезона",
@@ -44,6 +48,7 @@ function App() {
       price: 120,
       modalContent: "150 домов",
       isMeat: 0,
+      popularity: 12,
     }
   ]
 
@@ -68,7 +73,11 @@ function App() {
     }
   }
 
-  console.log(isFilled)
+  function sortByField(field) {
+    return (a, b) => a[field] < b[field] ? 1 : -1;
+  }
+  console.log(data.sort(sortByField('price')))
+
   return (
     <div className="App">
       <PizzaBackground />
