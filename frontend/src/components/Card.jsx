@@ -12,7 +12,7 @@ const Card = ({image, title, price, modalContent}) => {
             <img src= {image} alt="pizza" />
             <div className="aboutPizza">
                 <h1>{title}</h1>
-                <div className="buttons">
+                <div className="cardContent">
                     <form className="first">
                         <button>20 см</button>
                         <button>25 см</button>
@@ -23,9 +23,12 @@ const Card = ({image, title, price, modalContent}) => {
                         <button>Тонкое тесто</button>
                     </form>
                 </div>
-                <h2>{price} BYN</h2>
-                <Modal isOpened={isOpened} setIsOpened={setIsOpened} modalContent={modalContent}/>
+                <div className="lowerCard">
+                    <h2>{price} BYN</h2>
+                    <button>+</button>
+                </div>
             </div>
+            {isOpened && <Modal isOpened={isOpened} setIsOpened={setIsOpened} modalContent={modalContent}/>}
         </div>
     );
 };

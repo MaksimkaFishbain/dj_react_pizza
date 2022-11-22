@@ -90,6 +90,8 @@ body {
       box-shadow: 1px 1px 1px 1px #ccc inset;
 
       input[type="text"] {
+        width: 90%;
+        height: 80%;
         color: #908C8C;
         margin-left: 8px;
         border: none;
@@ -130,7 +132,7 @@ body {
     }
   }
 
-  .sortings {
+  .sorting {
     display: flex;
     border-top: 2px solid black;
     margin-top: 140px;
@@ -198,12 +200,11 @@ body {
       border-right: 1px dashed rgba(0, 0, 0, 0.5);
 
       input {
+        text-align: center;
         height: 44px;
         width: 102px;
         margin: 5px;
-        border-radius: 20px;
         background-color: #FEF6D1;
-        box-shadow: 1px 1px 1px 1px #000 inset;
       }
     }
 
@@ -265,9 +266,13 @@ body {
       width: 100%;
       height: 204px;
 
-      .buttons {
+      .cardContent {
         background-color: #FFC377;
         box-shadow: inset 0px 3px 1px 1px rgba(0,0,0,0.1);
+      }
+
+      .lowerCard {
+        display: flex;
       }
 
       button {
@@ -328,17 +333,70 @@ body {
   }
 }
 
-.cart-block {
+.cart {
+  height: 100vh;
+  width: 100vw;
   position: fixed;
-  right: -8px;
+  left: 0px;
   top: -5px;
-  height: 101%;
-  width: 400px;
-  background-color: #FFFFFF;
-  z-index: 105;
-  text-align: center;
+  display: flex;
   margin: 0;
   padding: 0;
-  display: none;
+  z-index: 101;
+
+  .cart.active {
+    display: none;
+  }
+
+  .cart__content {
+    background-color: #FFFFFF;
+    width: 400px;
+    z-index: 105;
+
+  }
+
+  .cartHeader {
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-between;
+
+    img {
+      margin: auto 10px auto 0;
+      width: 35px;
+      height: 35px;
+      opacity: .4;
+    }
+  }
+
+  .cartItem {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    margin: auto;
+    border-top: 1px dotted black;
+    border-bottom: 1px dotted black;
+
+    .cartItem--content {
+      width: 100%;
+      margin-left: 200px;
+    }
+
+    .pizza {
+      position: absolute;
+      left: -120px;
+      width: 60%;
+      heigth: 100%;
+    }
+
+    h3 {
+      width: 50%;
+      margin-right: 200px;
+    }
+
+  }
 }
+
 
