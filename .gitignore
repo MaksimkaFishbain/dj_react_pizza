@@ -2,6 +2,6 @@ npm run build/frontend/build
 /frontend/node_modules
 /venv
 /db.sqlite3
-db.sqlite3
+../Fullstack_pizza_project/db.sqlite3
 /.vscode
 .vscode

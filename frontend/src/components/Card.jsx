@@ -8,7 +8,7 @@ const Card = ({image, title, price, modalContent}) => {
 
     return (
         <div className="card">
-            <img className="info" src="/images/info.png" alt="info" onClick={() => setIsOpened(true)}/>
+            <img className="info" src="/media/images/frontend/public/images/info.png" alt="info" onClick={() => setIsOpened(true)}/>
             <img src= {image} alt="pizza" />
             <div className="aboutPizza">
                 <h1>{title}</h1>

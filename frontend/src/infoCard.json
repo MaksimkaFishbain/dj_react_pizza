@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "title": "Пепперонни",
+    "image": "/media/images/frontend/public/images/pizzaPeperoni.png",
+    "price": 122,
+    "modalContent": "20 грамм картошки",
+    "isMeat": 1,
+    "popularity": 36,
+    "date_create": "2022-11-13 ",
+    "date_update": "2022-11-29"
+  },
+  {
+    "id": 2,
+    "title": "Cалями",
+    "image": "/media/images/frontend/public/images/pizzaSalami.png",
+    "price": 99,
+    "modalContent": "40 грамм мандавошки",
+    "isMeat": 1,
+    "popularity": 24,
+    "date_create": "2022-11-13 ",
+    "date_update": "2022-11-29 "
+  },
+  {
+    "id": 3,
+    "title": "Гавайская",
+    "image": "/media/images/frontend/public/images/pizzaGavaiskia.png",
+    "price": 81,
+    "modalContent": "15 мандаринок",
+    "isMeat": 1,
+    "popularity": 18,
+    "date_create": "2022-11-13 ",
+    "date_update": "2022-11-29"
+  },
+  {
+    "id": 4,
+    "title": "Грибная",
+    "image": "/media/images/frontend/public/images/pizzaGribnaia.png",
+    "price": 144,
+    "modalContent": "90 ведер воды",
+    "isMeat": 0,
+    "popularity": 22,
+    "date_create": "2022-11-13 ",
+    "date_update": "2022-11-29 "
+  },
+  {
+    "id": 5,
+    "title": "4 сезона",
+    "image": "/media/images/frontend/public/images/pizzaFourSesons.png",
+    "price": 120,
+    "modalContent": "150 домов",
+    "isMeat": 0,
+    "popularity": 120,
+    "date_create": "2022-11-13 ",
+    "date_update": "2022-11-29"
+  },
+  {
+    "id": 6,
+    "title": "Диабло",
+    "image": "/media/images/frontend/public/images/pizzaDiablo.png",
+    "price": 112,
+    "modalContent": "Острая шо пиздец",
+    "isMeat": 1,
+    "popularity": 15,
+    "date_create": "2022-11-21",
+    "date_update": "2022-11-29"
+  },
+  {
+    "id": 7,
+    "title": "Соска",
+    "image": "/media/images/frontend/public/images/pizzaSoska.png",
+    "price": 123,
+    "modalContent": "Умм какая вкусная",
+    "isMeat": 1,
+    "popularity": 20,
+    "date_create": "2022-11-21",
+    "date_update": "2022-11-29"
+  },
+  {
+    "id": 8,
+    "title": "Школьная",
+    "image": "/media/images/frontend/public/images/pizzaSchooling.png",
+    "price": 1.75,
+    "modalContent": "Как из маминой печи",
+    "isMeat": 1,
+    "popularity": 135,
+    "date_create": "2022-11-29",
+    "date_update": "2022-11-29"
+  }
+]

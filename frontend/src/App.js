@@ -8,56 +8,8 @@ import Cart from "./components/Cart";
 function App() {
 
   // type: 1 - мясная, 2 - вегетарианиская
-  const data = [
-    {
-      title: "Пепперонни",
-      image: "/images/pizzaPeperoni.png",
-      price: 120,
-      modalContent: "20 грамм картошки",
-      isMeat: 1,
-      popularity: 36,
-    },
-    {
-      title: "Салями",
-      image: "/images/pizzaSalami.png",
-      price: 99,
-      modalContent: "40 грамм мандавошки",
-      isMeat: 1,
-      popularity: 24,
-    },
-    {
-      title: "Гавайская",
-      image: "/images/pizzaGavaiskia.png",
-      price: 81,
-      modalContent: "15 мандаринок",
-      isMeat: 1,
-      popularity: 18,
-    },
-    {
-      title: "Грибная",
-      image: "/images/pizzaGribnaia.png",
-      price: 144,
-      modalContent: "90 ведер воды",
-      isMeat: 0,
-      popularity: 22,
-    },
-    {
-      title: "4 сезона",
-      image: "/images/pizzaFourSesons.png",
-      price: 120,
-      modalContent: "150 домов",
-      isMeat: 0,
-      popularity: 12,
-    },
-    {
-      title: "Терияки",
-      image: "/images/pizzaTeriyaki.png",
-      price: 72,
-      modalContent: "3 царства",
-      isMeat: 1,
-      popularity: 25,
-    }
-  ]
+
+  let data = require('./infoCard.json');
 
   const [isRender, setIsRender] = useState(data)
   const [fillerValue, setFillerValue] = useState(2)
@@ -148,3 +100,5 @@ function App() {
 }
 
 export default App;
+
+
