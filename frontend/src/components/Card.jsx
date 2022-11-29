@@ -28,7 +28,7 @@ const Card = ({image, title, price, modalContent}) => {
                     <button>+</button>
                 </div>
             </div>
-            {isOpened && <Modal isOpened={isOpened} setIsOpened={setIsOpened} modalContent={modalContent}/>}
+            {isOpened && <Modal isOpened={isOpened} setIsOpened={setIsOpened} modalContent={modalContent} />}
         </div>
     );
 };

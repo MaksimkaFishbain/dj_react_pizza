@@ -2,7 +2,6 @@ import "./styles.scss"
 import Header from "./components/Header";
 import Sorting from "./components/Sorting";
 import Card from "./components/Card";
-import PizzaBackground from "./components/PizzaBackground";
 import React, {useState} from "react";
 import Cart from "./components/Cart";
 
@@ -82,7 +81,6 @@ function App() {
 
   return (
       <div className="App">
-        <PizzaBackground/>
         {cartOpened && <Cart cartOpened={cartOpened} setCartOpened={id => setCartOpened(id)} />}
         <div className="wrapper">
           <Header

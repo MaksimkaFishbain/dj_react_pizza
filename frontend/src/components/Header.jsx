@@ -7,7 +7,7 @@ const Header = ({setValue, setIsRender, filterByTitle, setCartOpened, cartOpened
             <form className="header">
                 <div className="logo">
                     <img src="/images/pizza.png" alt="logo"/>
-                    <h1>Pizza iz zada</h1>
+                    <h4>Здесь может быть <br /> ваша реклама</h4>
                 </div>
                 <div className="search">
                     <img src="/images/search.png" />
