@@ -8,13 +8,14 @@ import Cart from "./components/Cart";
 function App() {
 
   // type: 1 - мясная, 2 - вегетарианиская
-
+  
   let data = require('./infoCard.json');
 
   const [isRender, setIsRender] = useState(data)
   const [fillerValue, setFillerValue] = useState(2)
   const [value, setValue] = useState('')
   const [cartOpened, setCartOpened] = useState(false)
+  const [cartContent, setCartContent] = useState([])
 
   const filterByTitle = data.filter(item => {
     return value.length>0 && item.title.toLowerCase().includes(value.toLowerCase())
@@ -33,7 +34,7 @@ function App() {
 
   return (
       <div className="App">
-        {cartOpened && <Cart cartOpened={cartOpened} setCartOpened={id => setCartOpened(id)} />}
+        {cartOpened && <Cart cartOpened={cartOpened} setCartOpened={id => setCartOpened(id)} cartContent={cartContent} />}
         <div className="wrapper">
           <Header
               setValue={id => setValue(id)}
@@ -42,55 +43,19 @@ function App() {
               setCartOpened={i => setCartOpened(i)}
               cartOpened={cartOpened}
           />
-          <div className="sorting">
-            <ol id="left">
-              <li padding-right="300px" onClick={() => {
-                setIsRender(filterByFiller(1))
-                setFillerValue(1)
-              }}>Мясные
-              </li>
-              <li padding-right="400px" onClick={() => {
-                setIsRender(filterByFiller(0))
-                setFillerValue(0)
-              }}>Вегетарианские
-              </li>
-              <li padding-right="200px" onClick={() => {
-                setIsRender(filterByFiller(2))
-                setFillerValue(2)
-              }}>Все
-              </li>
-            </ol>
-            <ol id="center">
-              <h3>Ценовой диапазон</h3>
-              <li><input type={"range"} min={"1"} max={"100"}/></li>
-            </ol>
-            <ol id="right">
-              <p>Сортировать по:</p>
-              <li>
-                <button onClick={() => {
-                  setIsRender([...sortByField('popularity')])
-                }}>Популярности
-                </button>
-              </li>
-              <li>
-                <button onClick={() => {
-                  setIsRender([...sortByField('price')])
-                }}>Цене (по возрастанию)
-                </button>
-              </li>
-              <li>
-                <button onClick={() => {
-                  setIsRender([...sortByField('title')])
-                }}>Алфавиту
-                </button>
-              </li>
-            </ol>
-          </div>
+          <Sorting
+              setIsRender={cards => setIsRender(cards)}
+              setFillerValue={value => setFillerValue(value)}
+              sortByField={field => sortByField(field)}
+              filterByFiller={filler => filterByFiller(filler)}
+          />
           <div className="menu">
             {isRender.map(({...item}, index) =>
                 <Card
                     key={index}
                     {...item}
+                    setCartContent={i => setCartContent(i)}
+                    cartContent={cartContent}
                 />
             )}
           </div>

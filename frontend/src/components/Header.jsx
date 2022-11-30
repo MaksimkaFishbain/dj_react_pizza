@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Header = ({setValue, setIsRender, filterByTitle, setCartOpened, cartOpened}) => {
+const Header = ({setValue, setIsRender, filterByTitle, setCartOpened}) => {
 
     return (
         <>

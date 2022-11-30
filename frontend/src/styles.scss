@@ -229,6 +229,7 @@ body {
       margin-left: 15px;
       margin-top:10px;
       cursor: pointer;
+      z-index: 199;
     }
 
 
@@ -283,17 +284,6 @@ body {
         width: 50%;
         height: 50px;
       }
-      .add{
-        background: url("../media/images/frontend/public/images/add.png");
-        width: 23px;
-        height: 23px;
-        cursor: pointer;
-      }
-
-      .add:active{
-        background: url("../media/images/frontend/public/images/added.png");
-      }
-
     }
   }
 }

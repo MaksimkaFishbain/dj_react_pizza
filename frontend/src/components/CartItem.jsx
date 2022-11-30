@@ -1,13 +1,14 @@
 import React from 'react';
 
-const CartItem = () => {
+const CartItem = ({...cartItem}) => {
+    console.log(cartItem)
     return (
         <div className={"cartItem"}>
-            <img src={"/media/images/frontend/public/images/info.png"} className={"cartItem--remove"}/>
-            <img className={"pizza"} src={"./media/images/frontend/public/images/pizzaPeperoni.png"}/>
+            <img src={"./images/cancel.png"} className={"cartItem--remove"}/>
+            <img className={"pizza"} src={cartItem.img}/>
             <div className="cartItem--content">
-                <h3>Пепперонни</h3>
-                <h4>12 руб.</h4>
+                <h3>{cartItem.title}</h3>
+                <h4>{cartItem.price} руб.</h4>
             </div>
         </div>
     );

@@ -1,17 +1,18 @@
 import React, {useState} from 'react';
 import Modal from "./Modal";
+import CartItem from "./CartItem";
 
 
-const Card = ({image, title, price, modalContent}) => {
+const Card = ({cartContent, setCartContent, ...items}) => {
 
     const [isOpened, setIsOpened] = useState(false);
 
     return (
         <div className="card">
             <img className="info" src="/media/images/frontend/public/images/info.png" alt="info" onClick={() => setIsOpened(true)}/>
-            <img src= {image} alt="pizza" />
+            <img src= {items.image} alt="pizza" />
             <div className="aboutPizza">
-                <h1>{title}</h1>
+                <h1>{items.title}</h1>
                 <div className="cardContent">
                     <form className="first">
                         <button>20 см</button>
@@ -24,11 +25,11 @@ const Card = ({image, title, price, modalContent}) => {
                     </form>
                 </div>
                 <div className="lowerCard">
-                    <h2>{price} BYN</h2>
-                    <div className="add"></div>
+                    <h2>{items.price} BYN</h2>
+                    <button onClick={() => {setCartContent([...cartContent, {img: items.image, price: items.price, title: items.title}]); console.log(cartContent)}}>+</button>
                 </div>
             </div>
-            {isOpened && <Modal isOpened={isOpened} setIsOpened={setIsOpened} modalContent={modalContent} />}
+            {isOpened && <Modal isOpened={isOpened} setIsOpened={setIsOpened} modalContent={items.modalContent}/>}
         </div>
     );
 };
