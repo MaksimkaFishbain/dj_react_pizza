@@ -46,9 +46,10 @@ body {
       height: 100px;
 
       img {
-        margin-right: 15px;
-        width: 50px;
-        height: 50px;
+          height: 125px;
+          margin-left: -80px;
+          margin-top: 35px;
+          width: 125px;
       }
     }
 
@@ -213,6 +214,7 @@ body {
     box-shadow: inset 0px 0px 5px 10px rgba(0,0,0,0.1);
     font-family: 'Forum', cursive;
 
+
     img:nth-child(2) {
       position: absolute;
       margin-top: 15px;
@@ -228,6 +230,7 @@ body {
       margin-top:10px;
       cursor: pointer;
     }
+
 
     .aboutPizza {
       position: absolute;
@@ -280,6 +283,17 @@ body {
         width: 50%;
         height: 50px;
       }
+      .add{
+        background: url("../media/images/frontend/public/images/add.png");
+        width: 23px;
+        height: 23px;
+        cursor: pointer;
+      }
+
+      .add:active{
+        background: url("../media/images/frontend/public/images/added.png");
+      }
+
     }
   }
 }
