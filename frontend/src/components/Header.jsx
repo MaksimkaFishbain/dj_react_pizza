@@ -6,11 +6,11 @@ const Header = ({setValue, setIsRender, filterByTitle, setCartOpened}) => {
         <>
             <form className="header">
                 <div className="logo">
-                    <img src="/media/images/frontend/public/images/logo.png" alt="logo"/>
+                    <img src="/media/logo.png" alt="logo"/>
                     <h1>Pizza iz zada</h1>
                 </div>
                 <div className="search">
-                    <img src="/media/images/frontend/public/images/search.png" />
+                    <img src="/media/search.png" />
                     <input type={"text"} placeholder="Поиск..." onChange={(e) => {
                         setValue(e.target.value)
                         setIsRender(filterByTitle)

@@ -6,11 +6,10 @@ import CartItem from "./CartItem";
 const Card = ({cartContent, setCartContent, ...items}) => {
 
     const [isOpened, setIsOpened] = useState(false);
-
     return (
         <div className="card">
-            <img className="info" src="/media/images/frontend/public/images/info.png" alt="info" onClick={() => setIsOpened(true)}/>
-            <img src= {items.image} alt="pizza" />
+            <img className="info" src="/media/info.png" alt="info" onClick={() => setIsOpened(true)}/>
+            <img src= {'/media/'+ items.image} alt="pizza" />
             <div className="aboutPizza">
                 <h1>{items.title}</h1>
                 <div className="cardContent">

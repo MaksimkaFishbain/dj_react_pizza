@@ -8,7 +8,7 @@ const Cart = ({cartOpened, setCartOpened, cartContent}) => {
             <div className={cartOpened ? "cart__content" : "cart.active"} onClick={e => e.stopPropagation()}>
                 <div className="cartHeader">
                     <h1>Корзина</h1>
-                    <img src={"/media/images/frontend/public/images/сancel.png"} onClick={() => setCartOpened(false)}/>
+                    <img src={"/media/сancel.png"} onClick={() => setCartOpened(false)}/>
                 </div>
                 {cartContent.map((cartItem) =>
                     <CartItem
