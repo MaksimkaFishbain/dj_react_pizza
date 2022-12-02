@@ -17,6 +17,7 @@ const Header = ({setValue, setIsRender, filterByTitle, setCartOpened}) => {
                     }}/>
                 </div>
                 <div className="currentPayment">
+                    <div className="avatar"><img src="/media/avatar.png" alt="Профиль"/></div>
                     <button id="fst">7000 BYN</button>
                     <button id="sec" onClick={(e) => {
                         e.preventDefault()
