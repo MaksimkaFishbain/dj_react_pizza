@@ -1,8 +1,8 @@
 import "./styles.scss"
 import Header from "./components/Header";
-import Sorting from "./components/Sorting";
+import SortPanel from "./components/SortPanel";
 import Card from "./components/Card";
-import React, {useState} from "react";
+import React, {useState, useRef, useEffect} from "react";
 import Cart from "./components/Cart";
 
 function App() {
@@ -13,16 +13,18 @@ function App() {
 
   const [isRender, setIsRender] = useState(data)
   const [fillerValue, setFillerValue] = useState(2)
-  const [value, setValue] = useState('')
+  const value = useRef('')
   const [cartOpened, setCartOpened] = useState(false)
   const [cartContent, setCartContent] = useState([])
 
-  const filterByTitle = data.filter(item => {
-    return value.length>0 && item.title.toLowerCase().includes(value.toLowerCase())
+  let cost = cartContent.reduce((sum, obj) => obj.price + sum, 0)
+
+  const filterByTitle = () => data.filter(item => {
+    return value.current.length===0 ? data : item.title.toLowerCase().includes(value.current.toLowerCase())
   })
 
   let filterByFiller = (fillerValue) => {
-    return fillerValue === 2 ? data : data.filter((item) => {
+    return fillerValue === 2 ? filterByTitle() : filterByTitle().filter((item) => {
       return item.isMeat === fillerValue
     })
   }
@@ -34,32 +36,50 @@ function App() {
 
   return (
       <div className="App">
-        {cartOpened && <Cart cartOpened={cartOpened} setCartOpened={id => setCartOpened(id)} cartContent={cartContent} />}
+        {cartOpened &&
+            <Cart
+              cartOpened={cartOpened}
+              setCartOpened={id => setCartOpened(id)}
+              cartContent={cartContent}
+              setCartContent={i => setCartContent(i)}
+              cost={cost}
+            />
+        }
         <div className="wrapper">
           <Header
-              setValue={id => setValue(id)}
+              value={value}
               filterByTitle={filterByTitle}
+              isRender={isRender}
               setIsRender={item => setIsRender(item)}
               setCartOpened={i => setCartOpened(i)}
               cartOpened={cartOpened}
+              cost={cost}
           />
-          <Sorting
+          <SortPanel
               setIsRender={cards => setIsRender(cards)}
               setFillerValue={value => setFillerValue(value)}
               sortByField={field => sortByField(field)}
               filterByFiller={filler => filterByFiller(filler)}
           />
-          <div className="menu">
-            {isRender.map(({...item}, index) =>
-                <Card
-                    key={index}
-                    {...item}
-                    setCartContent={i => setCartContent(i)}
-                    cartContent={cartContent}
-                />
+          <main className="menu">
+            {isRender.length===0 ? <h1 className={"no-pizza"}>Такой пиццы нет!</h1> :
+                isRender.map(({...item}, index) =>
+                  <Card
+                      key={index}
+                      {...item}
+                      setCartContent={i => setCartContent(i)}
+                      cartContent={cartContent}
+                  />
             )}
-          </div>
+          </main>
         </div>
+          <footer>
+            <b>
+              <h1>Наши контакты:</h1>
+              <p>inst1: <a href={"https://www.instagram.com/sanukcooltoday/"}>@Spenkau</a></p>
+              <p>inst2: <a href={"https://www.instagram.com/magsadorchik/"}>@magsadorchik</a></p>
+            </b>
+          </footer>
       </div>
   );
 }

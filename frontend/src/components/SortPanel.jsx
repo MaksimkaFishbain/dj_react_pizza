@@ -1,30 +1,27 @@
 import React from 'react';
+import Scroll from "./UI/Scroll";
 
-const Sorting = ({setIsRender, setFillerValue, sortByField, filterByFiller}) => {
+const SortPanel = ({setIsRender, setFillerValue, sortByField, filterByFiller}) => {
     return (
-        <div className="sorting">
-            <ol id="left">
+        <section className="sortPanel">
+            <ol>
                 <li padding-right="300px" onClick={() => {
                     setIsRender(filterByFiller(1))
                     setFillerValue(1)
-                }}>Мясные
-                </li>
+                }}>Мясные</li>
                 <li padding-right="400px" onClick={() => {
                     setIsRender(filterByFiller(0))
                     setFillerValue(0)
-                }}>Вегетарианские
-                </li>
+                }}>Вегетарианские</li>
                 <li padding-right="200px" onClick={() => {
                     setIsRender(filterByFiller(2))
                     setFillerValue(2)
-                }}>Все
-                </li>
+                }}>Все</li>
             </ol>
-            <ol id="center">
-                <h3>Ценовой диапазон</h3>
-                <li><input type={"range"} min={"1"} max={"100"}/></li>
+            <ol>
+                <Scroll />
             </ol>
-            <ol id="right">
+            <ol>
                 <p>Сортировать по:</p>
                 <li>
                     <button onClick={() => {
@@ -45,8 +42,8 @@ const Sorting = ({setIsRender, setFillerValue, sortByField, filterByFiller}) => 
                     </button>
                 </li>
             </ol>
-        </div>
+        </section>
     );
 };
 
-export default Sorting;
+export default SortPanel;
