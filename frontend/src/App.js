@@ -8,7 +8,7 @@ import Cart from "./components/Cart";
 function App() {
 
   // type: 1 - мясная, 2 - вегетарианиская
-  
+
   let data = require('./infoCard.json');
 
   const [isRender, setIsRender] = useState(data)
@@ -38,11 +38,11 @@ function App() {
       <div className="App">
         {cartOpened &&
             <Cart
-              cartOpened={cartOpened}
-              setCartOpened={id => setCartOpened(id)}
-              cartContent={cartContent}
-              setCartContent={i => setCartContent(i)}
-              cost={cost}
+                cartOpened={cartOpened}
+                setCartOpened={id => setCartOpened(id)}
+                cartContent={cartContent}
+                setCartContent={i => setCartContent(i)}
+                cost={cost}
             />
         }
         <div className="wrapper">
@@ -64,26 +64,24 @@ function App() {
           <main className="menu">
             {isRender.length===0 ? <h1 className={"no-pizza"}>Такой пиццы нет!</h1> :
                 isRender.map(({...item}, index) =>
-                  <Card
-                      key={index}
-                      {...item}
-                      setCartContent={i => setCartContent(i)}
-                      cartContent={cartContent}
-                  />
-            )}
+                    <Card
+                        key={index}
+                        {...item}
+                        setCartContent={i => setCartContent(i)}
+                        cartContent={cartContent}
+                    />
+                )}
           </main>
         </div>
-          <footer>
-            <b>
-              <h1>Наши контакты:</h1>
-              <p>inst1: <a href={"https://www.instagram.com/sanukcooltoday/"}>@Spenkau</a></p>
-              <p>inst2: <a href={"https://www.instagram.com/magsadorchik/"}>@magsadorchik</a></p>
-            </b>
-          </footer>
+        <footer>
+          <b>
+            <h1>Наши контакты:</h1>
+            <p>inst1: <a href={"https://www.instagram.com/sanukcooltoday/"}>@Spenkau</a></p>
+            <p>inst2: <a href={"https://www.instagram.com/magsadorchik/"}>@magsadorchik</a></p>
+          </b>
+        </footer>
       </div>
   );
 }
 
 export default App;
-
-
