@@ -10,7 +10,7 @@ const Header = ({value, setIsRender, filterByTitle, setCartOpened, cost}) => {
                     <h1>Pizza iz zada</h1>
                 </div>
                 <div className="search">
-                    <img src="/media/search.png" />
+                    <img src="/media/search.png" alt={"search"} />
                     <input type={"text"} placeholder="Поиск..." onChange={(e) => {
                         value.current = e.target.value
                         setIsRender(filterByTitle())
