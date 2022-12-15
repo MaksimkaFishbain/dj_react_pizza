@@ -2,7 +2,7 @@ import "./styles.scss"
 import Header from "./components/Header";
 import SortPanel from "./components/SortPanel";
 import Card from "./components/Card";
-import React, {useState, useRef, useEffect} from "react";
+import React, {useState, useRef} from "react";
 import Cart from "./components/Cart";
 
 function App() {
@@ -23,17 +23,17 @@ function App() {
     return value.current.length===0 ? data : item.title.toLowerCase().includes(value.current.toLowerCase())
   })
 
-  let filterByFiller = (fillerValue) => {
+
+  const filterByFiller = (fillerValue) => {
     return fillerValue === 2 ? filterByTitle() : filterByTitle().filter((item) => {
       return item.isMeat === fillerValue
     })
   }
 
-  let sortByField = (field) => {
+  const sortByField = (field) => {
     return field === 'popularity' ? filterByFiller(fillerValue).sort((a, b) => a[field] < b[field] ? 1 : -1) :
         filterByFiller(fillerValue).sort((a, b) => a[field] < b[field] ? -1 : 1)
   }
-
   return (
       <div className="App">
         {cartOpened &&
@@ -56,9 +56,10 @@ function App() {
               cost={cost}
           />
           <SortPanel
+              isRender={isRender}
+              sortByField={field => sortByField(field)}
               setIsRender={cards => setIsRender(cards)}
               setFillerValue={value => setFillerValue(value)}
-              sortByField={field => sortByField(field)}
               filterByFiller={filler => filterByFiller(filler)}
           />
           <main className="menu">
