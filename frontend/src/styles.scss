@@ -2,8 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
 * {
   box-sizing: border-box;
-  moz-user-select: none;
-  -khtml-user-select: none;
   user-select: none;
 }
 
@@ -138,18 +136,22 @@ body {
         height: 25px;
         border-radius: 5px;
         cursor: pointer;
+        padding-left: 30px;
       }
 
       li:first-child {
         background: #9f0505;
+        padding-right: 200px;
       }
 
       li:nth-child(2) {
         background: #098069;
+        padding-right: 200px;
       }
 
       li:last-child {
         background: linear-gradient(225deg, #098069 3%, #9f0505 94%);
+        padding-right: 200px;
         margin-left: auto;
         margin-right: auto;
       }
@@ -158,7 +160,20 @@ body {
     }
 
     ol:nth-child(2) {
+      $btn-height: 40px;
       border-right: 1px dashed rgba(0, 0, 0, 0.5);
+      .reset-btn {
+        width: 190px;
+        height: 40px;
+        font-size: 15px;
+        background-color: #F9E9A2;
+        border-radius: 50px;
+        cursor: pointer;
+        text-align: center;
+        h4 {
+          padding-top: 10px;
+        }
+      }
     }
 
     ol:last-child {
@@ -166,7 +181,7 @@ body {
       justify-content: center;
       align-items: center;
       width: 510px;
-      padding: 0px 0px 30px 10px;
+      padding: 0 0 30px 10px;
 
       select {
         cursor: pointer;
@@ -224,7 +239,7 @@ body {
 
       .cardContent {
         background-color: #0f937a;
-        box-shadow: inset 0px 3px 1px 1px rgba(0,0,0,0.1);
+        box-shadow: inset 0 3px 1px 1px rgba(0,0,0,0.1);
       }
 
       .lowerCard {
@@ -300,7 +315,7 @@ body {
   height: 100vh;
   width: 100vw;
   position: fixed;
-  left: 0px;
+  left: 0;
   top: 2px;
   display: flex;
   margin: 0;
@@ -369,7 +384,7 @@ body {
       position: absolute;
       left: -120px;
       width: 60%;
-      heigth: 100%;
+      height: 100%;
     }
 
     h3 {
