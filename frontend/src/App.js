@@ -4,6 +4,10 @@ import SortPanel from "./components/SortPanel";
 import Card from "./components/Card";
 import React, {useState, useRef} from "react";
 import Cart from "./components/Cart";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import RegistrationPage from "./pages/RegistrationPage";
+import LoginPage from "./pages/LoginPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
 
@@ -81,6 +85,22 @@ function App() {
             <p>inst2: <a href={"https://www.instagram.com/magsadorchik/"}>@magsadorchik</a></p>
           </b>
         </footer>
+        <div>
+          <div className="autorization-content">
+            <Routes>
+              <Route exact path={"/"} element={<RegistrationPage />}>
+
+              </Route>
+              <Route exact path={"/page2"} element={<LoginPage />}>
+
+              </Route>
+              <Route
+                  path="*"
+                  element={<NotFoundPage />}
+              />
+            </Routes>
+          </div>
+        </div>
       </div>
   );
 }
