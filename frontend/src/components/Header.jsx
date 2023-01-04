@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
+import LoginPage from "../pages/LoginPage";
 
 const Header = ({value, setIsRender, filterByTitle, setCartOpened, cost}) => {
-
+    const [isLogPageOpened, setLogPageOpened] = useState(false)
     return (
         <>
             <header>
@@ -17,7 +18,9 @@ const Header = ({value, setIsRender, filterByTitle, setCartOpened, cost}) => {
                     }}/>
                 </div>
                 <div className="currentPayment">
-                    <div className="avatar"><img src="/media/avatar.png" alt="Профиль"/></div>
+                    <div className="avatar">
+                        <img onClick={() => {setLogPageOpened(true)}} src="/media/avatar.png" alt="Профиль"/>
+                    </div>
                     <button id="fst">{cost} BYN</button>
                     <button id="sec" onClick={(e) => {
                         e.preventDefault()
@@ -25,6 +28,13 @@ const Header = ({value, setIsRender, filterByTitle, setCartOpened, cost}) => {
                     }}>Корзина</button>
                 </div>
             </header>
+            {isLogPageOpened &&
+                <LoginPage
+                    isLogPageOpened={isLogPageOpened}
+                    setLogPageOpened={value => setLogPageOpened(value)}
+                />
+            }
+
         </>
     );
 };

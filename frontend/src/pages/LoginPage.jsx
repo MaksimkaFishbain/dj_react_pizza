@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const LoginPage = () => {
+const LoginPage = ({isLogPageOpened, setLogPageOpened}) => {
+    console.log(isLogPageOpened)
     return (
-        <div>
-            <form action="/register" method='post' className="signup-form">
+        <div className={isLogPageOpened ? "login-form" : "login-form.active"} onClick={() => setLogPageOpened(false)}>
+            <form action="/login" method='post' className="signup-form" onClick={e => e.stopPropagation()}>
                 <div className="form-header">
                     <h1>Log in</h1>
                 </div>
@@ -26,7 +27,7 @@ const LoginPage = () => {
                         <input type="checkbox" name="rememberMe" />
                         <label htmlFor="rememberMe">Remember me</label>
                     </div>
-                    <button type="submit" id="login" className="btn login">Log in</button>
+                    <button type="submit" className="btn login">Log in</button>
                 </div>
                 <div className="redirect">
                     <p>New to out site? <Link to="/" className="">Sign up</Link></p>

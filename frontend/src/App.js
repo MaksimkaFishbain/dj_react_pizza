@@ -10,6 +10,17 @@ import LoginPage from "./pages/LoginPage";
 import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
+  // <div className="authorization-content">
+  //   <Routes>
+  //     <Route exact path={"/"} element={<RegistrationPage />}>
+  //
+  //     </Route>
+  //     <Route
+  //         path="*"
+  //         element={<NotFoundPage />}
+  //     />
+  //   </Routes>
+  // </div>
 
   // type: 1 - мясная, 2 - вегетарианиская
 
@@ -85,22 +96,6 @@ function App() {
             <p>inst2: <a href={"https://www.instagram.com/magsadorchik/"}>@magsadorchik</a></p>
           </b>
         </footer>
-        <div>
-          <div className="autorization-content">
-            <Routes>
-              <Route exact path={"/"} element={<RegistrationPage />}>
-
-              </Route>
-              <Route exact path={"/page2"} element={<LoginPage />}>
-
-              </Route>
-              <Route
-                  path="*"
-                  element={<NotFoundPage />}
-              />
-            </Routes>
-          </div>
-        </div>
       </div>
   );
 }
